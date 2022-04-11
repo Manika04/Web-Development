@@ -1,0 +1,83 @@
+<!--
+    ~ The getAttribute() method of the Element interface returns the value of a specified attribute on the element.
+
+    ~ The setAttribute() method sets the value of an attribute on the specified element. If the attribute already exists, the value is updated; otherwise a new attribute is added with the specified name and value.
+
+    ~ The currentTarget event property returns the element whose event listeners triggered the event. konsa card select kiya hai voh pata chalta hai.
+
+    ~ The Element.classList is a read-only property that returns a live DOMTokenList collection of the class attributes of the element. This can then be used to manipulate the class list.
+
+    Using classList is a convenient alternative to accessing an element's list of classes as a space-delimited string via element.className.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-top: 5rem;
+        }
+
+        .blue {
+            background-color: blue;
+            box-shadow: 0px 0px 6px 5px;
+        }
+
+        .green {
+            background-color: green;
+            box-shadow: 0px 0px 6px 5px;
+        }
+
+        .red {
+            background-color: red;
+            box-shadow: 0px 0px 6px 5px;
+        }
+
+        .card {
+            border: 1px solid;
+            height: 10rem;
+            width: 10rem;
+            margin: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+
+    <script>
+        // Q Write a script which fetches the data-color attribute of the card on double clicking on them and attaches the fetched class to that card. Also changes the data-color attribute to "used"
+    
+        let cards = document.querySelectorAll(".card");
+        for(let i = 0; i < cards.length; i++){
+            cards[i].addEventListener("dblclick", function(e){
+                let classToBeAttached = e.currentTarget.getAttribute("data-color");
+                e.currentTarget.setAttribute("data-color", "used");
+                e.currentTarget.classList.add(classToBeAttached);
+            })
+        }
+    </script>
+</body>
+
+</html>

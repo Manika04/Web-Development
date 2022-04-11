@@ -1,0 +1,45 @@
+<!--
+    ~ The Document method "querySelector()" returns the first Element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.Used to identify the element.
+
+    ~ The "addEventListener()" method of the EventTarget interface sets up a function that will be called whenever the specified event is delivered to the target.
+    
+    Common targets are Element, or its children, Document, and Window, but the target may be any object that supports events (such as XMLHttpRequest).
+
+    ~ the "document.createElement()" method creates the HTML element specified by tagName, or an HTMLUnknownElement if tagName isn't recognized.
+
+    ~ The "appendChild()" method appends a node (element) as the last child of an element.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <meta charset="UTF-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+</head>
+<body>
+    <button class="btn"> Say Hello</button>
+
+    <script>
+        //Q1 on Clicking the Button append hello to the page
+
+        // let btn = document.querySelector('button');
+        let btn = document.querySelector('.btn');
+
+        //addEventListener("action", function(e){where e is an event})
+        btn.addEventListener("click", function(e){
+            // console.log("Hello from console!");
+
+            //Create a new element
+            let divElement = document.createElement("div");
+            divElement.innerText = "Hello!!";
+            
+            let body = document.querySelector("body");
+            body.appendChild(divElement);
+        });
+               
+    </script>
+
+</body>
+</html>

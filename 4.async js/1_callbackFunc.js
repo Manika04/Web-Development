@@ -17,7 +17,7 @@
 
 const fs = require('fs');
 
-//here 'last' is parameter for printLastName function
+//here 'cb1 & cb2 are parameters for printLastName function
 function printFirstName(firstName, cb1, cb2){
     console.log(firstName);
     cb1('Saxena');
