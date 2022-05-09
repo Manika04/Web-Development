@@ -1,0 +1,31 @@
+1. React uses Virtual DOM. Virtual DOM is basically a copy of DOM.
+    1.1. It will change the element that needs to be changed and will be re rendered, therefore making it more efficient
+    1.2. Disadv of DOM - the whole DOM is reloaded/the page is rerendered if a change is made in the page.
+
+2. React is a Javascript library and not Framework.
+3. JSX is a syntax where we can write HTML with JS
+    3.1 Disadvantage of JSX - 
+        3.1.1 Cannot use loops - SOLUTION: map and filter
+        3.1.2 cannot create functions - SOLUTION: define function outside JSX and call the function inside the JSX
+    3.2 Cannot be understanded by browser - SOLUTION: Babel, it converts our JSX to JS which browser can understand   
+
+4. Shotcuts for snippets:
+    4.1 rce - class based component with export  
+
+5. We use React fragments(<></>) instead of div to enclose multiple components because our virtual DOM catches react fragments easily and this makes our rendering fast.       
+
+6. CDN - Content Delivery Network
+
+7. LIFECYCLE METHODS
+    7.1 MOUNTING: sabse phele constructor() chalta hai phir rendering hoti hai and we use a method "componentdidmount"
+        7.1.1 ComponentDidMount: checks whether component is added in our DOM or not. The componentDidMount() method runs after the component output has been rendered to the DOM. API is called under this method. yeh bas ek hi baar chalta hai
+
+    7.2 UPDATION: render hone ke baad agar update karte hai toh  we use "ComponentDidUpdate"
+
+    7.3 UNMOUNTING: to remove the component from DOM we use "ComponentWillUnmount"  
+
+    7.4 First component will be constructed(mounting), then it will be rendered and then the api will be called.
+
+8. [...] spread operator se naya reference ban jata hai aur react naye reference ko jaldi catch karta which in turn jaldi load hota hai. The JavaScript spread operator (...) allows us to quickly copy all or part of an existing array or object into another array or object.    
+
+9. Single page application is that page baar baar reload ya refresh nhi hota .. idhar sirf link change hota hai aur page ek hi page par render ho jata hai. We use react router instead of a kyuki a mein loading hogi.
